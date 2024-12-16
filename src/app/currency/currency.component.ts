@@ -145,7 +145,7 @@ export class CurrencyComponent implements OnInit {
         let aIndex = a.displayText.toLowerCase().indexOf(pattern);
         let bIndex = b.displayText.toLowerCase().indexOf(pattern);
         return (aIndex < bIndex) ? -1 : ((aIndex > bIndex) ? 1 : 0);
-      });   
+      });
     this.initCurrencyTypesList(this.filteredData);
   }
 
@@ -178,10 +178,15 @@ export class CurrencyComponent implements OnInit {
 
   setCalendarAccessibilityBtn() {
     const button1 = this.calendar1.el.nativeElement.querySelector('button');
-    if (button1) this.renderer.setProperty(button1, 'ariaLabel', 'בחר תאריך מלוח שנה');
-
+    if (button1) {
+      this.renderer.setProperty(button1, 'ariaLabel', 'בחר תאריך מלוח שנה');
+      this.renderer.setProperty(button1, 'tabindex', -1,);
+    }
     const button2 = this.calendar2.el.nativeElement.querySelector('button');
-    if (button2) this.renderer.setProperty(button2, 'ariaLabel', 'בחר תאריך מלוח שנה');
+    if (button2) {
+      this.renderer.setProperty(button2, 'ariaLabel', 'בחר תאריך מלוח שנה');
+      this.renderer.setProperty(button2, 'tabindex', -1);
+    }
   }
 
   setArrowsLabels() {
@@ -201,6 +206,13 @@ export class CurrencyComponent implements OnInit {
     this.setCurrencyLable();
     this.setPaginationAriaLabels();
     this.setCalendarAccessibilityBtn();
+
+    // setTimeout(() => {
+    //   const headers = this.table.el.nativeElement.querySelectorAll('th');
+    //   // headers.forEach((header: HTMLElement, index: number) => {
+    //   //   header.setAttribute('tabindex', (index + 17).toString());
+    //   // });
+    // });
   }
 
   onCalendarShow() {

@@ -47,10 +47,10 @@
 
 <!-- Table -->
 <p-table #myTable [value]="filteredData" [responsive]="true" [paginator]="true" [rows]="30" [first]="currentIndex"
-  (onFilter)="dt.reset()" [columns]="columns" #dt>
+  (onFilter)="dt.reset()" [columns]="columns" #dt tabindex="-1">
   <ng-template pTemplate="header" let-columns>
     <tr>
-      <th *ngFor="let col of columns; let i = index" [attr.tabindex]="i + 16" [pSortableColumn]="col.field"
+      <th *ngFor="let col of columns; let i = index" [attr.tabindex]="0" [pSortableColumn]="col.field"
         class="white blue-txt none-border-blue pb-0 text-center">
         {{col.header}}
         <button class="SortBtn" aria-label="Sort by Name ascending">
@@ -63,7 +63,7 @@
   <ng-template pTemplate="body" let-currencyTypeList>
     <tr class="tableStyle">
 
-      <td class="dark-grey-txt description-txt" *ngFor="let col of columns;let i = index" [attr.tabindex]="i + 16">
+      <td class="dark-grey-txt description-txt" *ngFor="let col of columns;let i = index" [attr.tabindex]="0">
         <ng-container *ngIf="(col.header=='מתאריך תוקף') || (col.header== 'עד תאריך תוקף')">
           {{currencyTypeList[col.field] | fromatIEDate}}
         </ng-container>
