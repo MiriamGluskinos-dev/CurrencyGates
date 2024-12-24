@@ -53,7 +53,7 @@
                   "maximumError": "350kB"
                 }
               ],
-              "outputHashing": "all",
+              "outputHashing": "none",
               "index": "src/index.html"
             },
             "development": {
