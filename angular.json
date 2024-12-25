@@ -41,6 +41,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -77,7 +83,7 @@
           },
           "defaultConfiguration": "development",
           "options": {
-             "proxyConfig": "src/proxy.conf.json"
+            "proxyConfig": "src/proxy.conf.json"
           }
         },
         "extract-i18n": {
