@@ -1,6 +1,5 @@
 import { ConfigService } from "./config.service";
-// import { configFile } from "../../assets/settingfolder/setting.json";
-
+import { environment } from "../../environments/environment";
 export function ConfigLoader(configService: ConfigService) {
-  return () => configService.load("../../assets/settingfolder/setting.json");
+  return () => configService.load(environment.configFile);
 }
