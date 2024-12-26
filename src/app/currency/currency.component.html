@@ -27,7 +27,7 @@
 <div class="row row-gov">
 
   <div class="col-6 col-sm-2 col-lg-2 lg-mb-30 xs-mb-25 xs-pl-10">
-    <label class="labelFor labelStyle" for="fromDate"></label>
+    <label class="labelFor" for="fromDate"></label>
     <p-calendar #calendar1 inputId="fromDate" [(ngModel)]="fromDate" [showIcon]="true" [monthNavigator]="true"
       [yearNavigator]="true" [yearRange]="yearRange" [maxDate]="toDate" (onSelect)="searchData()" dateFormat="dd/mm/yy"
       placeholder="מתאריך" (onFocus)="onCalendarShow()"
