@@ -35,7 +35,7 @@ export class CurrencyComponent implements OnInit {
   private shaarolamiBaseUrl = environment.baseUrls.shaarolami;
 
   ngOnInit() {
-
+    alert('hello')
     let tdate: Date = new Date();
     this.yearRange = (tdate.getFullYear() - 10).toString() + ':' + tdate.getFullYear();
     this.callService(`${this.shaarolamiBaseUrl}/CustomsPilotWeb/CurrencyRates/api/GetRates?fromDate=${this.FromDateString}&toDate=${this.ToDateString}`, 'GET').
