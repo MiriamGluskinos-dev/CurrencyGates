@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { CurrencyComponent } from './currency/currency.component';
+import { SystemTableComponent } from './system-table/system-table.component';
 
 export const rootRouterConfig: Routes = [
-    { path: 'currencyGates', component: CurrencyComponent, pathMatch:'full' },
+    { path: 'systemTable', component: SystemTableComponent, pathMatch:'full' },
 ];

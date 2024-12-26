@@ -21,7 +21,7 @@ import { Calendar } from 'primeng/calendar';
 @Component({
   selector: 'app-currency',
   templateUrl: './currency.component.html',
-  styleUrls: ['./currency.component.scss', '../../../node_modules/primeng/resources/themes/nova/theme.css', '../../styles.scss']
+  styleUrls: ['./currency.component.scss', '../../../node_modules/primeng/resources/themes/nova/theme.css']
 })
 export class CurrencyComponent implements OnInit {
 

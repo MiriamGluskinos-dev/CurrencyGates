@@ -1,0 +1,73 @@
+/* Modern PrimeNG Styles */
+
+/* Adjust button icons */
+::ng-deep {
+    .p-button-icon-only {
+      width: 2em;
+      text-indent: 0 !important;
+      white-space: nowrap;
+      color: #285c7e !important;
+    }
+  
+    /* Remove table default borders */
+    .p-datatable {
+      table-layout: unset !important;
+  
+      th,
+      td {
+        padding: 5.5px !important;
+      }
+    }
+  
+    /* Paginator adjustments */
+    .p-paginator {
+      direction: ltr !important;
+      background-color: white !important;
+      border: none;
+      padding-top: 10px;
+    }
+  
+    /* Form control styling */
+    .form-control {
+      border: solid 1px #285c7e;
+      border-radius: 7px !important;
+      height: 32px;
+      background-color: #fff;
+      padding: 0 5px 0 1.5em !important;
+    }
+  
+    /* Dropdown and autocomplete adjustments */
+    .p-autocomplete-panel {
+      top: 32.5px !important;
+      right: 0;
+      width: 250px;
+      background-color: white !important;
+    }
+  
+    .p-autocomplete-dropdown {
+      top: 0;
+      left: 0;
+      display: block;
+      position: absolute;
+    }
+    .clsred{
+      background-color: white !important;
+    }
+  
+    /* Text alignment */
+    .text-right {
+      text-align: right !important;
+    }
+  
+    .text-center {
+      text-align: center !important;
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .pi-search {
+      display: none;
+    }
+  }
+  

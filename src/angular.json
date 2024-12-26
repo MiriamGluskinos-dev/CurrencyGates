@@ -2,6 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  
   "projects": {
     "ShaarOlamiNgDev": {
       "root": "",
@@ -28,6 +29,7 @@
               "src/assets/fonts/excel.woff"
             ],
             "styles": [
+              "src/style_angular_18.css",
               "src/styles.css",
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/primeng.min.css"
@@ -73,6 +75,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "proxyConfig": "proxy.conf.json",
             "browserTarget": "ShaarOlamiNgDev:build"
           },
           "configurations": {
@@ -101,7 +104,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/style_angular_18.css"
             ],
             "scripts": [],
             "assets": [

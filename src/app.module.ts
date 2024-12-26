@@ -22,7 +22,8 @@ import {
   HtmlreaderDirectiveFooter
 } from './app/app.component';
 import { PageHeaderComponent } from './app/page-header/page-header.component';
-import { CurrencyComponent } from './app/currency/currency.component';
+import { SystemTableComponent } from './app/system-table/system-table.component';
+
 
 /* Services */
 import { HttpService } from "./app/services/http.service";
@@ -40,7 +41,7 @@ import { MessageService } from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
-    CurrencyComponent,
+    SystemTableComponent,
     FromatIEDatePipe,
     PageHeaderComponent,
   ],

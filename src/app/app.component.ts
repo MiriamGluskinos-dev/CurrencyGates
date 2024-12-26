@@ -48,7 +48,7 @@ export class HtmlreaderDirectiveFooter {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss', '../styles.scss'],
+  styleUrls: ['./app.component.scss', '../style_angular_18.css'],
 })
 export class AppComponent {
 

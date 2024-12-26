@@ -1,10 +1,11 @@
 {
-  "/api": {
+  "/shaarolami": {
     "target": "https://shaarolami-query.customs.mof.gov.il",
     "secure": false,
     "changeOrigin": true,
+    "logLevel": "debug",
     "pathRewrite": {
-      "^/api": ""
+      "^/shaarolami": ""
     }
   },
   "/govscript": {
