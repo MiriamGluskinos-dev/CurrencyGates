@@ -4,24 +4,23 @@
   <div class="col-10 col-lg-4 lg-mb-15 sm-mb-10 lg-pl-10">
 
     <label class="labelFor" for="currencyType"></label>
-    <p-autoComplete aria-autocomplete="both" styleClass="w-100" role="combobox" class="CurrencyText"
+    <p-autoComplete aria-autocomplete="both" styleClass="w-100" styleClass="custom-autocomplete" role="combobox" class="CurrencyText"
       inputStyleClass="reforma w-100 form-control txt gray-txt search-input text-right" [(ngModel)]="selectedCurrency"
       [suggestions]="currencyTypeList" field="displayText" [size]="42" placeholder="בחירת מטבע..." [dropdown]="true"
       inputId="currencyType" (completeMethod)="completeData()" (onClear)="searchData()" (onSelect)="searchData()"
       (onDropdownClick)="selectedCurrency=null; searchData(); toggleDropdownVisibility();" [minLength]="1" autoHighlight
-      tabindex="13" [attr.aria-expanded]="isSuggestionsVisible ? true : false">
+      [attr.aria-expanded]="isSuggestionsVisible ? true : false">
     </p-autoComplete>
   </div>
   <div class="col-2 col-lg-8 lg-mb-15 xs-mb-25 excelContainer">
     <p class="nounderline pull-left pointer ltr excelStyle" title="Excel-CSV" aria-label="להורדה בפורמט אקסל או CSV"
       (click)="dt.exportCSV()">
       <img src="assets/images/excel.png" alt="Excel Icon" class="blue-txt social-size"
-        style="width: 45px; height: 40px;" tabindex="14">
+        style="width: 45px; height: 40px;" tabindex="0">
     </p>
 
   </div>
 </div>
-
 
 <!-- Filter By Date -->
 <div class="row row-gov">
@@ -29,18 +28,20 @@
   <div class="col-6 col-sm-2 col-lg-2 lg-mb-30 xs-mb-25 xs-pl-10">
     <label class="labelFor" for="fromDate"></label>
     <p-calendar #calendar1 inputId="fromDate" [(ngModel)]="fromDate" [showIcon]="true" [monthNavigator]="true"
-      [yearNavigator]="true" [yearRange]="yearRange" [maxDate]="toDate" (onSelect)="searchData()" dateFormat="dd/mm/yy"
-      placeholder="מתאריך" (onFocus)="onCalendarShow()"
-      inputStyleClass="w-100 form-control txt gray-txt search-input text-right" tabindex="15">
+      [yearNavigator]="true" [yearRange]="yearRange" [maxDate]="toDate" (onSelect)="searchData()" (ngModelChange)="searchData()"
+       dateFormat="dd/mm/yy" styleClass="custom-autocomplete" [appendTo]="'body'" panelStyleClass="custom-calendar-panel"
+      placeholder="מתאריך" (onFocus)="onCalendarShow()" aria-label="תאריך בפורמט dd/mm/yyyy"
+      inputStyleClass="w-100 form-control txt gray-txt search-input text-right">
     </p-calendar>
   </div>
 
   <div class="col-6 col-sm-2 col-lg-2 lg-mb-30  xs-mb-25  xs-pl-10">
     <label class="labelFor" for="toDate"></label>
     <p-calendar #calendar2 inputId="toDate" [(ngModel)]="toDate" [showIcon]="true" [monthNavigator]="true"
-      [yearNavigator]="true" [yearRange]="yearRange" dateFormat="dd/mm/yy"
-      (onSelect)="searchData()" placeholder="עד תאריך" (onFocus)="onCalendarShow()"
-      inputStyleClass="w-100 form-control txt gray-txt search-input text-right" tabindex="16" >
+      [yearNavigator]="true" [yearRange]="yearRange" dateFormat="dd/mm/yy" [appendTo]="'body'"
+      aria-label="תאריך בפורמט dd/mm/yyyy" styleClass="custom-autocomplete" panelStyleClass="custom-calendar-panel"
+      (onSelect)="searchData()" placeholder="עד תאריך" (onFocus)="onCalendarShow()" (ngModelChange)="searchData()"
+      inputStyleClass="w-100 form-control txt gray-txt search-input text-right">
     </p-calendar>
   </div>
 </div>
@@ -51,7 +52,7 @@
   <ng-template pTemplate="header" let-columns>
     <tr>
       <th *ngFor="let col of columns; let i = index" [attr.tabindex]="0" [pSortableColumn]="col.field"
-        class="white blue-txt none-border-blue pb-0 text-center">
+        class="white blue-txt none-border-blue pb-0 text-center" [attr.ariaLabel]=col.header>
         {{col.header}}
         <button class="SortBtn" aria-label="Sort by Name ascending">
           <p-sortIcon class="sortIcon" pSortableColumn="col.field" ariaLabel="מיין" ariaLabelDesc="מיין בסדר יורד"
@@ -63,7 +64,7 @@
   <ng-template pTemplate="body" let-currencyTypeList>
     <tr class="tableStyle">
 
-      <td class="dark-grey-txt description-txt" *ngFor="let col of columns;let i = index" [attr.tabindex]="0">
+      <td class="dark-grey-txt description-txt" *ngFor="let col of columns;let i = index">
         <ng-container *ngIf="(col.header=='מתאריך תוקף') || (col.header== 'עד תאריך תוקף')">
           {{currencyTypeList[col.field] | fromatIEDate}}
         </ng-container>

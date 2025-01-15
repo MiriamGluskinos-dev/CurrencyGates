@@ -188,36 +188,20 @@ export class CurrencyComponent implements OnInit {
     }
   }
 
-  setArrowsLabels() {
-    this.calendar1.el.nativeElement.querySelector('p-datepicker-trigger').addEventListener('click',
-      this.setArrows()
-    );
-  }
-
-  setArrows() {
-    const dateArowNext2 = this.calendar2.el.nativeElement.querySelector('p-datepicker-next');
-    if (dateArowNext2) this.renderer.setAttribute(dateArowNext2, 'ariaLabel', 'לחודש הבא');
-  }
-
   ngAfterViewInit() {
     this.cdRef.detectChanges();
     this.renderer.addClass(document.getElementsByTagName("table")[0], "table-bordered");
     this.setCurrencyLable();
     this.setPaginationAriaLabels();
     this.setCalendarAccessibilityBtn();
-
-    // setTimeout(() => {
-    //   const headers = this.table.el.nativeElement.querySelectorAll('th');
-    //   // headers.forEach((header: HTMLElement, index: number) => {
-    //   //   header.setAttribute('tabindex', (index + 17).toString());
-    //   // });
-    // });
   }
 
   onCalendarShow() {
     setTimeout(() => {
       (document.getElementsByClassName('p-datepicker-prev')[0] as HTMLAnchorElement).setAttribute('aria-label', 'לחודש הקודם');
       (document.getElementsByClassName('p-datepicker-next')[0] as HTMLAnchorElement).setAttribute('aria-label', 'לחודש הבא');
+      (document.getElementsByClassName('p-datepicker-year')[0] as HTMLAnchorElement).setAttribute('aria-label', 'בחר שנה');
+      (document.getElementsByClassName('p-datepicker-month')[0] as HTMLAnchorElement).setAttribute('aria-label', 'בחר חודש');
     }, 0);
   }
 

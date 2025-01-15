@@ -57,3 +57,26 @@
         width: fit-content;
     }
 }
+
+::ng-deep .custom-autocomplete input:focus {
+    box-shadow: 0 0 0 2px #285c7e;
+    width: 100% !important;
+}
+
+::ng-deep pi-inputtext:focus {
+    box-shadow: 0 0 0 2px #285c7e;
+    width: 100% !important;
+}
+
+
+.custom-calendar-panel {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    z-index: 1000;
+}
+
+::ng-deep .p-autocomplete-panel .p-autocomplete-item:hover {
+    background-color: #d3d3d3 !important;
+    box-shadow: 0 0 0 2px #285c7e;
+}
