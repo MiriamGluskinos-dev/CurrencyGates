@@ -179,12 +179,12 @@ export class CurrencyComponent implements OnInit {
     const button1 = this.calendar1.el.nativeElement.querySelector('button');
     if (button1) {
       this.renderer.setProperty(button1, 'ariaLabel', 'בחר תאריך מלוח שנה');
-      this.renderer.setProperty(button1, 'tabindex', -1,);
+      this.renderer.setProperty(button1, 'tabindex', 0,);
     }
     const button2 = this.calendar2.el.nativeElement.querySelector('button');
     if (button2) {
       this.renderer.setProperty(button2, 'ariaLabel', 'בחר תאריך מלוח שנה');
-      this.renderer.setProperty(button2, 'tabindex', -1);
+      this.renderer.setProperty(button2, 'tabindex', 0);
     }
   }
 

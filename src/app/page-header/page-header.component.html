@@ -3,10 +3,10 @@
     <div id="breadcrumbs" class="col-md-12  lg-mt-10">
         <ul class="breadcrumbs-gov hidden-print">
             <!--HP link-->
-            <li tabindex="1"><a href="/he" target="_self" tabindex="-1">gov.il</a></li>
+            <li><a href="/he" target="_self" tabindex="0">gov.il</a></li>
             <!-- Generate Link to Collector-->
-            <li tabindex="2"><a href="/apps/taxes" target="_self" tabindex="-1">רשות המסים בישראל</a></li>
-            <li tabindex="3"><span class="dark-gray-txt ">{{pageTitle}}</span></li>
+            <li><a href="/apps/taxes" target="_self" tabindex="0">רשות המסים בישראל</a></li>
+            <li><span class="dark-gray-txt" tabindex="0">{{pageTitle}}</span></li>
         </ul>
     </div>
     <div class="clearfix xs-mb-25 lg-mb-30"></div>
@@ -17,8 +17,8 @@
 <div class="row row-gov">
     <!-- Title -->
     <div class="col-xs-12 col-md-12">
-        <h1 class="h1 dark-blue-txt reforma-medium lg-mb-20 xs-mb-25" tabindex="4">{{pageTitle}}</h1>
-        <h2 class="description-txt dark-blue-txt lg-mb-30 xs-mb-10" tabindex="5">
+        <h1 class="h1 dark-blue-txt reforma-medium lg-mb-20 xs-mb-25" tabindex="0">{{pageTitle}}</h1>
+        <h2 class="description-txt dark-blue-txt lg-mb-30 xs-mb-10" tabindex="0">
             <p class="title" *ngFor="let line of descriptionLines" style="line-height: 1.5">{{line}}</p>
         </h2>
 
@@ -29,32 +29,32 @@
 
 
                 <!-- Email -->
-                <a class="nounderline" href="javascript:mailThisUrl()" target="_blank" title="אימייל" aria-label="אימייל" tabindex="6">
+                <a class="nounderline" href="javascript:mailThisUrl()" target="_blank" title="אימייל" aria-label="אימייל" tabindex="0">
                     <i class="social icon-email3 blue-txt social-size" style="color:#ba0000"></i>
                 </a>
                 <!-- Twitter -->
                 <a class="nounderline" id="TwitterURL" href="https://twitter.com/intent/tweet?url=" target="_blank"
-                    title="טוויטר" aria-label="טוויטר" onclick="share(this.id)" tabindex="7">
+                    title="טוויטר" aria-label="טוויטר" onclick="share(this.id)" tabindex="0">
                     <i class="social icon-twitter3 blue-txt social-size" style="color:#32cdfd"></i>
                 </a>
                 <!-- Linkdin-->
                 <a class="nounderline" id="LinkedinURL" href=" https://www.linkedin.com/shareArticle?mini=true&amp;url="
-                    title="לינקד-אין" aria-label="לינקד-אין" target="_blank" onclick="share(this.id)" tabindex="8">
+                    title="לינקד-אין" aria-label="לינקד-אין" target="_blank" onclick="share(this.id)" tabindex="0">
                     <i class="social icon-linkedin3 blue-txt social-size" style="color:#0077b5"></i>
                 </a>
                 <!-- Facebook -->
                 <a class="nounderline" id="FacebookURL" href="https://facebook.com/sharer.php?u=" title="פייסבוק"
-                    aria-label="פייסבוק" target="_blank" onclick="share(this.id)" tabindex="9">
+                    aria-label="פייסבוק" target="_blank" onclick="share(this.id)" tabindex="0">
                     <i class="social icon-facebook3  blue-txt social-size" style="color:#3a589e"></i>
                 </a>
                 <!-- Whatapp mobile-->
                 <a class="nounderline visible-on-mobile" id="WhatsappURL" href="whatsapp://send?text="
-                    title="ווטאסאפ-סמארטפון" aria-label="ווטאסאפ-סמארטפון" target="_blank" onclick="share(this.id)" tabindex="10">
+                    title="ווטאסאפ-סמארטפון" aria-label="ווטאסאפ-סמארטפון" target="_blank" onclick="share(this.id)" tabindex="0">
                     <i class="social icon-whatsapp3 blue-txt social-size" style="color:#29a71a"></i>
                 </a>
                 <!-- Whatapp desktop-->
                 <a class="nounderline visible-on-desktop" id="WhatsappURL" href="https://web.whatsapp.com/send?text="
-                    title="ווטסאפ" aria-label="ווטסאפ" target="_blank" onclick="share(this.id)" tabindex="11">
+                    title="ווטסאפ" aria-label="ווטסאפ" target="_blank" onclick="share(this.id)" tabindex="0">
                     <i class="social icon-whatsapp3 blue-txt social-size" style="color:#29a71a"></i>
                 </a>
                 <!--horizontal line-->

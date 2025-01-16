@@ -48,7 +48,7 @@
 
 <!-- Table -->
 <p-table #myTable [value]="filteredData" [responsive]="true" [paginator]="true" [rows]="30" [first]="currentIndex"
-  (onFilter)="dt.reset()" [columns]="columns" #dt tabindex="-1">
+  (onFilter)="dt.reset()" [columns]="columns" #dt tabindex="0">
   <ng-template pTemplate="header" let-columns>
     <tr>
       <th *ngFor="let col of columns; let i = index" [attr.tabindex]="0" [pSortableColumn]="col.field"
