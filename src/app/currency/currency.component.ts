@@ -6,6 +6,7 @@ import { Table } from 'primeng/table';
 import { HttpService } from '../services/http.service'
 import { Calendar } from 'primeng/calendar';
 import { environment } from '../../environments/environment';
+import { AutoComplete } from 'primeng/autocomplete';
 
 
 @Component({
@@ -120,12 +121,13 @@ export class CurrencyComponent implements OnInit {
 
     return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
   }
+  @ViewChild('autoComplete') autoComplete!: AutoComplete;
 
   initCurrencyTypesList(list: CurrencyGate[]) {
     this.currencyTypeList = list.filter((elem, index, self) => index === self.findIndex(i => i.currencyTypeName == elem.currencyTypeName));
     this.currencyTypeList.splice(0, 0, new CurrencyGate(new Date(0), new Date(), '', "הכל", ''));
     this.isSuggestionsVisible = this.currencyTypeList.length > 0;
-
+    this.renderer.removeAttribute(this.autoComplete, 'aria-expanded');
   }
 
   searchData() {
@@ -198,10 +200,18 @@ export class CurrencyComponent implements OnInit {
 
   onCalendarShow() {
     setTimeout(() => {
+      if (document.getElementsByClassName('p-datepicker').length > 1) {
+        const element = document.getElementsByClassName('p-datepicker')[0];
+        if (element && element.parentNode) {
+          element.parentNode.removeChild(element);
+        }
+      }
       (document.getElementsByClassName('p-datepicker-prev')[0] as HTMLAnchorElement).setAttribute('aria-label', 'לחודש הקודם');
       (document.getElementsByClassName('p-datepicker-next')[0] as HTMLAnchorElement).setAttribute('aria-label', 'לחודש הבא');
-      (document.getElementsByClassName('p-datepicker-year')[0] as HTMLAnchorElement).setAttribute('aria-label', 'בחר שנה');
-      (document.getElementsByClassName('p-datepicker-month')[0] as HTMLAnchorElement).setAttribute('aria-label', 'בחר חודש');
+      const year = (document.getElementsByClassName('p-datepicker-year')[0] as HTMLAnchorElement).textContent;
+      (document.getElementsByClassName('p-datepicker-year')[0] as HTMLAnchorElement).setAttribute('aria-label', year + 'בחר שנה');
+      const month = (document.getElementsByClassName('p-datepicker-month')[0] as HTMLAnchorElement).textContent;
+      (document.getElementsByClassName('p-datepicker-month')[0] as HTMLAnchorElement).setAttribute('aria-label', month + 'בחר חודש');
     }, 0);
   }
 

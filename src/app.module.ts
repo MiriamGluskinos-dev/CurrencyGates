@@ -35,6 +35,7 @@ import { FromatIEDatePipe } from './app/pipes/fromat-ie-date.pipe';
 
 /* Message Service */
 import { MessageService } from 'primeng/api';
+import { FixAutocompleteAttributesDirective } from './app/currency/fix-autocomplete-attributes.directive';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MessageService } from 'primeng/api';
     CurrencyComponent,
     FromatIEDatePipe,
     PageHeaderComponent,
+    FixAutocompleteAttributesDirective
   ],
   imports: [
     BrowserModule,
