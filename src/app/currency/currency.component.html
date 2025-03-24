@@ -4,10 +4,11 @@
   <div class="col-10 col-lg-4 lg-mb-15 sm-mb-10 lg-pl-10">
 
     <label class="labelFor" for="currencyType"></label>
-    <p-autoComplete #autoComplete fixAutocompleteAttributes aria-autocomplete="both" styleClass="w-100 custom-autocomplete" role="combobox" class="CurrencyText"
-      inputStyleClass="reforma w-100 form-control txt gray-txt search-input text-right" [(ngModel)]="selectedCurrency"
-      [suggestions]="currencyTypeList" field="displayText" [size]="42" placeholder="בחירת מטבע..." [dropdown]="true"
-      inputId="currencyType" (completeMethod)="completeData()" (onClear)="searchData()" (onSelect)="searchData()"
+    <p-autoComplete #autoComplete fixAutocompleteAttributes styleClass="w-100 custom-autocomplete" role="combobox"
+      class="CurrencyText" inputStyleClass="reforma w-100 form-control txt gray-txt search-input text-right"
+      [(ngModel)]="selectedCurrency" [suggestions]="currencyTypeList" field="displayText" [size]="42"
+      placeholder="בחירת מטבע..." [dropdown]="true" inputId="currencyType" (completeMethod)="completeData()"
+      (onClear)="searchData()" (onSelect)="searchData()"
       (onDropdownClick)="selectedCurrency=null; searchData(); toggleDropdownVisibility();" [minLength]="1" autoHighlight
       [attr.aria-expanded]="isSuggestionsVisible ? true : false">
     </p-autoComplete>
