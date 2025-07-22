@@ -44,7 +44,7 @@
     "typescript": "~5.4.0"
   },
   "resolutions": {
-    "debug": "^4.3.7",
+    "debug": "4.4.0",
     "inflight": "1.0.7",
     "body-parser": "^1.20.4"
   }
